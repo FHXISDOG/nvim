@@ -9,6 +9,7 @@ set history=1024
 set autochdir
 set whichwrap=b,s,<,>,[,]
 set nobomb
+set nowrap
 " 去掉哔哔声
 set belloff=all
 set noerrorbells

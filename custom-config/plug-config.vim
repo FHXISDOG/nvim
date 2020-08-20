@@ -10,7 +10,7 @@ call plug#begin()
  Plug 'scrooloose/nerdtree'
  Plug 'Xuyuanp/nerdtree-git-plugin'
  Plug 'Yggdroot/LeaderF'
- Plug 'tpope/vim-surround'  " quick change surround idetifier with c-s
+ Plug 'tpope/vim-surround'  " quick change surround idetifier,such as  cs ysw [ ds[
  Plug 'jiangmiao/auto-pairs'  " auto add pair 
 " language
  Plug 'fatih/vim-go'

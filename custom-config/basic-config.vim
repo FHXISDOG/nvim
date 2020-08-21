@@ -1,4 +1,4 @@
-colorscheme monokai_pro
+colorscheme monokai
 " General {{{
 set nu
 set nocompatible
@@ -9,6 +9,7 @@ set history=1024
 set autochdir
 set whichwrap=b,s,<,>,[,]
 set nobomb
+" 不折叠
 set nowrap
 " 去掉哔哔声
 set belloff=all
@@ -19,7 +20,13 @@ set backspace=indent,eol,start whichwrap+=<,>,[,]
 set clipboard+=unnamedplus
 " 设置隐藏而不是 分割窗口
 set hidden
-" 设置 alt 键不映射到菜单栏
+" 背景透明
+set background=dark
+highlight Normal guibg=NONE ctermfg=252 ctermbg=NONE
+hi! NonText ctermbg=NONE guibg=NONE
+set termguicolors
+"相对行
+set relativenumber
 " }}}
 
 " Lang & Encoding {{{

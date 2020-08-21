@@ -2,6 +2,7 @@
 call plug#begin()
 " Beautify 
  Plug 'phanviet/vim-monokai-pro' 
+ Plug 'sickill/vim-monokai'
  Plug 'vim-airline/vim-airline' " status line bueutify
  Plug 'vim-airline/vim-airline-themes'
  Plug 'luochen1990/rainbow' " pathness colorful

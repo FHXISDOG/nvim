@@ -24,6 +24,7 @@ set hidden
 set background=dark
 highlight Normal guibg=NONE ctermfg=252 ctermbg=NONE
 hi! NonText ctermbg=NONE guibg=NONE
+hi! LineNr ctermbg=NONE guibg=NONE
 set termguicolors
 "相对行
 set relativenumber

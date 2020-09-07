@@ -1,5 +1,6 @@
 colorscheme monokai
 " General {{{
+set conceallevel=3
 set nu
 set nocompatible
 syntax on
@@ -9,6 +10,8 @@ set history=1024
 set autochdir
 set whichwrap=b,s,<,>,[,]
 set nobomb
+" 上下预留5行
+set so=5
 " 不折叠
 set nowrap
 " 去掉哔哔声
@@ -18,18 +21,23 @@ set t_vb=
 set backspace=indent,eol,start whichwrap+=<,>,[,]
 " Vim 的默认寄存器和系统剪贴板共享
 set clipboard+=unnamedplus
+" 所在行高亮
+set cursorline
 " 设置隐藏而不是 分割窗口
 set hidden
 " 背景透明
 set background=dark
-highlight Normal guibg=NONE ctermfg=252 ctermbg=NONE
+set termguicolors
+hi! Normal guibg=NONE ctermfg=252 ctermbg=NONE
 hi! NonText ctermbg=NONE guibg=NONE
 hi! LineNr ctermbg=NONE guibg=NONE
-set termguicolors
+hi! VertSplit ctermbg=100 ctermfg=100
+" hi! CursorLine   cterm=NONE ctermbg=black ctermfg=green guibg=blue guifg=NONE
+"hi VertSplit    term=reverse        cterm=reverse          gui=none             guibg=Grey10      guifg=blue
+hi VertSplit    gui=none             guibg=Grey10      guifg=blue
 "相对行
 set relativenumber
 " }}}
-
 " Lang & Encoding {{{
 set fileencodings=utf-8,gbk2312,gbk,gb18030,cp936
 set encoding=UTF-8
@@ -45,6 +53,7 @@ set tabstop=4
 set expandtab
 set softtabstop=4
 set foldmethod=indent
+set shiftwidth=4
 " }}}
 
 " key map {{{
@@ -78,3 +87,4 @@ inoremap <C-d> <Del>
 " cd home dir when start
 cd ~
 " }}}
+

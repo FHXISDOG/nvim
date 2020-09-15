@@ -4,11 +4,11 @@ filetype indent plugin on
 
 
 " vim 自动折叠 marker
-augroup ft_vim
-    au!
-
-    au FileType vim setlocal foldmethod=marker
-augroup END
+" augroup ft_vim
+"     au!
+"
+"     au FileType vim setlocal foldmethod=marker
+" augroup END
 " }}}
 
 " orhter config {{{

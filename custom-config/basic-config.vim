@@ -36,7 +36,7 @@ hi! VertSplit ctermbg=100 ctermfg=100
 "hi VertSplit    term=reverse        cterm=reverse          gui=none             guibg=Grey10      guifg=blue
 hi VertSplit    gui=none             guibg=Grey10      guifg=blue
 "相对行
-set relativenumber
+" set relativenumber
 " }}}
 " Lang & Encoding {{{
 set fileencodings=utf-8,gbk2312,gbk,gb18030,cp936
@@ -52,7 +52,7 @@ set smartindent
 set tabstop=4
 set expandtab
 set softtabstop=4
-set foldmethod=indent
+" set foldmethod=indent
 set shiftwidth=4
 " }}}
 

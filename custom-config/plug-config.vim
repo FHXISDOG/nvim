@@ -54,6 +54,7 @@ let g:NERDTreeDirArrowCollapsible = ''
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " NERDTreeToggle key map
 nmap <leader>ne :NERDTreeToggle<cr>
+nmap <leader>nf :NERDTreeFind<cr>
 " }}}
 
 " Airline config {{{

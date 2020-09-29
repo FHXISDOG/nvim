@@ -120,7 +120,8 @@ nmap <leader>tl :Vista!! <cr>
 let g:coc_global_extensions = [ 
     \'coc-bookmark',
     \'coc-snippets',
-    \'coc-vetur'
+    \'coc-vetur',
+    \'coc-clangd',
 \]
 " Give more space for displaying messages.
 set cmdheight=2

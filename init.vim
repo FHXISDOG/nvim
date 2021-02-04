@@ -2,7 +2,6 @@
 
 filetype indent plugin on
 
-
 " vim 自动折叠 marker
 " augroup ft_vim
 "     au!

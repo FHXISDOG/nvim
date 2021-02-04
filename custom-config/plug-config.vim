@@ -118,7 +118,6 @@ nmap <leader>tl :Vista!! <cr>
 " coc config{{{
 " coc extensions
 let g:coc_global_extensions = [ 
-    \'coc-bookmark',
     \'coc-snippets',
     \'coc-vetur',
     \'coc-clangd',

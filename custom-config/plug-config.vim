@@ -1,65 +1,78 @@
 "Plugin {{{
 call plug#begin()
-" Beautify 
- Plug 'phanviet/vim-monokai-pro' 
- Plug 'sickill/vim-monokai'
- Plug 'vim-airline/vim-airline' " status line bueutify
- Plug 'vim-airline/vim-airline-themes'
- Plug 'luochen1990/rainbow' " pathness colorful
+" Beautify
+Plug 'phanviet/vim-monokai-pro'
+Plug 'sickill/vim-monokai'
+Plug 'vim-airline/vim-airline' " status line bueutify
+Plug 'vim-airline/vim-airline-themes'
+Plug 'luochen1990/rainbow' " pathness colorful
+Plug 'liuchengxu/space-vim-theme'
 " tool
- Plug 'scrooloose/nerdtree'
+" Plug 'scrooloose/nerdtree'
 "  Plug 'ryanoasis/vim-devicons' " add airline nerdtree ...  to nerd font
 "  Plug 'Xuyuanp/nerdtree-git-plugin'
- Plug 'Yggdroot/LeaderF'
- Plug 'tpope/vim-surround'  " quick change surround idetifier,such as  cs ysw [ ds[
- Plug 'jiangmiao/auto-pairs'  " auto add pair 
+Plug 'Yggdroot/LeaderF'
+Plug 'tpope/vim-surround'  " quick change surround idetifier,such as  cs ysw [ ds[
+Plug 'jiangmiao/auto-pairs'  " auto add pair
+Plug 'kshenoy/vim-signature' " highlight marks
 " language
- Plug 'fatih/vim-go'
- Plug 'sebdah/vim-delve'
- Plug 'Shougo/vimproc'
- Plug 'tomtom/tcomment_vim'  " qucik add comment with g-c in visual mode
- Plug 'neoclide/coc.nvim', {'branch': 'release'}
- Plug 'liuchengxu/vista.vim'
- Plug 'aklt/plantuml-syntax'
- "Plug 'majutsushi/tagbar'
- " snippet 
- Plug 'SirVer/ultisnips'
- Plug 'honza/vim-snippets'
+Plug 'fatih/vim-go'
+Plug 'sebdah/vim-delve'
+Plug 'Shougo/vimproc'
+Plug 'liuchengxu/vista.vim'
+Plug 'tomtom/tcomment_vim'  " qucik add comment with g-c in visual mode
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'liuchengxu/vista.vim'
+Plug 'aklt/plantuml-syntax'
+Plug 'Chiel92/vim-autoformat'
+Plug 'yuttie/hydrangea-vim'
+" tools
+Plug 'easymotion/vim-easymotion'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+"Plug 'majutsushi/tagbar'
+" snippet
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 " backup plug
- "Plug 'Shougo/denite.nvim'
- "Plug 'Shougo/defx.nvim'
- "Plug 'roxma/nvim-yarp'
- "Plug 'roxma/vim-hug-neovim-rpc'
+"Plug 'Shougo/denite.nvim'
+" Plug 'Shougo/defx.nvim'
+" Plug 'kristijanhusak/defx-icons'
+"Plug 'roxma/nvim-yarp'
+"Plug 'roxma/vim-hug-neovim-rpc'
 call plug#end()
 " }}}
 
 
-" NERDTree config {{{
-let NERDTreeShowBookmarks=1
-let g:NERDTreeMinimalUI = v:true
-" 显示行号
-let NERDTreeShowLineNumbers=1
-" 是否显示隐藏文件
-let NERDTreeShowHidden=1
-" let g:WebDevIconsUnicodeDecorateFolderNodes = v:true
-" let g:NERDTreeDirArrowExpandable = '▸'
-" let g:NERDTreeDirArrowCollapsible = '▾'
-"let NERDTreeDirArrows = 1
-"let g:WebDevIconsNerdTreeAfterGlyphPadding = ''
-let g:NERDTreeDirArrowExpandable = ''
-let g:NERDTreeDirArrowCollapsible = ''
-" 打开vim时没有打开文件自动打开nerdtree
-"autocmd vimenter * if !argc()|NERDTree|endif
-"当NERDTree为剩下的唯一窗口时自动关闭
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-" NERDTreeToggle key map
-nmap <leader>ne :NERDTreeToggle<cr>
-nmap <leader>nf :NERDTreeFind<cr>
-" }}}
 
 " Airline config {{{
+let g:airline_theme="molokai"      " 设置主题
+if !exists('g:airline_symbols')
+let g:airline_symbols = {}
+endif
+let g:airline_symbols.colnr = ' ㏇:'
+let g:airline_symbols.colnr = ' ℅:'
+let g:airline_symbols.crypt = '🔒'
+let g:airline_symbols.linenr = '☰'
+let g:airline_symbols.linenr = ' ␊:'
+let g:airline_symbols.linenr = ' ␤:'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.maxlinenr = ''
+let g:airline_symbols.maxlinenr = '㏑'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.spell = 'Ꞩ'
+let g:airline_symbols.notexists = 'Ɇ'
+" 开启tabline
+let g:airline#extensions#tabline#enabled = 1      "tabline中当前buffer两端的分隔字符
+let g:airline#extensions#tabline#left_sep = 'โ'   "tabline中未激活buffer两端的分隔字符
+let g:airline#extensions#tabline#left_alt_sep = '|'      "tabline中buffer显示编号
+let g:airline#extensions#tabline#buffer_nr_show = 1      
 let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#ignore_bufadd_pat#buffer_nr_show = '!|defx|gundo|nerd_tree|startify|tagbar|term://|undotree|vimfiler'
+let g:airline#extensions#tabline#ignore_bufadd_pat#buffer_nr_show  = '!|vista|vim-signature|CoCExplorer|defx|gundo|nerd_tree|startify|tagbar|term://|undotree|vimfiler'
+let airline#extensions#tabline#ignore_bufadd_pat =
+            \ '\c\vgundo|undotree|vimfiler|tagbar|nerd_tree|vista'
 set laststatus=2
 "  }}}
 
@@ -68,9 +81,11 @@ let g:Lf_RootMarkers = ['.project', '.root', '.svn', '.git']
 let g:Lf_WorkingDirectoryMode = 'Ac'
 let g:Lf_WindowPosition = 'popup'
 let g:Lf_PreviewInPopup = 1
-let g:Lf_HideHelp  = 1
+let g:Lf_HideHelp  = 0
+let g:Lf_StlSeparator = { 'left': "\ue0b0", 'right': "\ue0b2", 'font': "DejaVu Sans Mono for Powerline" }
 nnoremap <leader>ff :Leaderf file<cr><Tab>
 nnoremap <leader>fb :Leaderf buffer<cr><Tab>
+nnoremap <leader>fs :Leaderf rg -C5 <cr><Tab>
 " }}}
 
 " vim-go config{{{
@@ -108,20 +123,24 @@ let g:vista#renderer#enable_icon = 1
 
 " The default icons can't be suitable for all the filetypes, you can extend it as you wish.
 let g:vista#renderer#icons = {
-\   "function": "\uf794",
-\   "variable": "\uf71b",
-\  }
+            \   "function": "\uf794",
+            \   "variable": "\uf71b",
+            \  }
 " key map
 nmap <leader>tl :Vista!! <cr>
 " }}}
 
 " coc config{{{
 " coc extensions
-let g:coc_global_extensions = [ 
-    \'coc-snippets',
-    \'coc-vetur',
-    \'coc-clangd',
-\]
+let g:coc_global_extensions = [
+            \'coc-snippets',
+            \'coc-vetur',
+            \'coc-clangd',
+            \'coc-pyright',
+            \'coc-go',
+            \'coc-explorer',
+            \'coc-tabnine'
+            \]
 " Give more space for displaying messages.
 set cmdheight=2
 
@@ -135,24 +154,24 @@ set shortmess+=c
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
 if has("patch-8.1.1564")
-  " Recently vim can merge signcolumn and number column into one
-  set signcolumn=number
+    " Recently vim can merge signcolumn and number column into one
+    set signcolumn=number
 else
-  set signcolumn=yes
+    set signcolumn=yes
 endif
 
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
 inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
+            \ pumvisible() ? "\<C-n>" :
+            \ <SID>check_back_space() ? "\<TAB>" :
+            \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
 " Use <c-space> to trigger completion.
@@ -162,11 +181,12 @@ inoremap <silent><expr> <c-space> coc#refresh()
 " position. Coc only does snippet and additional edit on confirm.
 " <cr> could be remapped by other vim plugin, try `:verbose imap <CR>`.
 if exists('*complete_info')
-  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+    inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
 else
-  inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+    inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 endif
 
+command! -nargs=0 Format :call CocAction('format')
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
@@ -182,11 +202,11 @@ nmap <silent> gr <Plug>(coc-references)
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
+    if (index(['vim','help'], &filetype) >= 0)
+        execute 'h '.expand('<cword>')
+    else
+        call CocAction('doHover')
+    endif
 endfunction
 
 " Highlight the symbol and its references when holding the cursor.
@@ -200,11 +220,11 @@ xmap <leader>fm <Plug>(coc-format-selected)
 nmap <leader>fm <Plug>(coc-format-selected)
 
 augroup mygroup
-  autocmd!
-  " Setup formatexpr specified filetype(s).
-  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-  " Update signature help on jump placeholder.
-  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+    autocmd!
+    " Setup formatexpr specified filetype(s).
+    autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+    " Update signature help on jump placeholder.
+    autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
 " Applying codeAction to the selected region.
@@ -266,10 +286,67 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 " }}}
 
+" vim-go config {{{
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_operators = 1
+" }}}
 
 
 " vue config{{{
 let g:LanguageClient_serverCommands = {
-    \ 'vue': ['vls']
-    \ }
+            \ 'vue': ['vls']
+            \ }
 " }}}
+
+" coc-explorer{{{
+nmap <space>e :CocCommand explorer<CR>
+nmap <space>f :CocCommand explorer --preset floating<CR>
+autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
+let g:coc_explorer_global_presets = {
+\   '.vim': {
+\     'root-uri': '~/.vim',
+\   },
+\   'cocConfig': {
+\      'root-uri': '~/.config/coc',
+\   },
+\   'tab': {
+\     'position': 'tab',
+\     'quit-on-open': v:true,
+\   },
+\   'tab:$': {
+\     'position': 'tab:$',
+\     'quit-on-open': v:true,
+\   },
+\   'floating': {
+\     'position': 'floating',
+\     'open-action-strategy': 'sourceWindow',
+\   },
+\   'floatingTop': {
+\     'position': 'floating',
+\     'floating-position': 'center-top',
+\     'open-action-strategy': 'sourceWindow',
+\   },
+\   'floatingLeftside': {
+\     'position': 'floating',
+\     'floating-position': 'left-center',
+\     'floating-width': 50,
+\     'open-action-strategy': 'sourceWindow',
+\   },
+\   'floatingRightside': {
+\     'position': 'floating',
+\     'floating-position': 'right-center',
+\     'floating-width': 50,
+\     'open-action-strategy': 'sourceWindow',
+\   },
+\   'simplify': {
+\     'file-child-template': '[selection | clip | 1] [indent][icon | 1] [filename omitCenter 1]'
+\   },
+\   'buffer': {
+\     'sources': [{'name': 'buffer', 'expand': v:true}]
+\   },
+\ }
+"}}}

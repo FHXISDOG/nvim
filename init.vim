@@ -9,11 +9,17 @@ filetype indent plugin on
 "     au FileType vim setlocal foldmethod=marker
 " augroup END
 " }}}
+"
+function! SourceLocal(relativePath)
+  let fullPath = '~/.config/nvim' . '/'. a:relativePath
+  exec 'source ' . fullPath
+endfunction
 
+let g:coc_node_path = trim(system('which node'))
 " orhter config {{{
-source ~/.config/nvim/custom-config/basic-config.vim
-source ~/.config/nvim/custom-config/custom-config.vim
-source ~/.config/nvim/custom-config/plug-config.vim
+call SourceLocal("custom-config/basic-config.vim")
+call SourceLocal("custom-config/basic-config.vim")
+call SourceLocal("custom-config/plug-config.vim")
 "source ~/vimfiles/custom-config/plug-config.vim
 "source ~/vimfiles/custom-config/custom-config.vim
 " }}}

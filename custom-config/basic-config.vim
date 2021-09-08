@@ -1,4 +1,5 @@
-colorscheme monokai
+colorscheme molokai
+let g:rehash256 = 1
 " General {{{
 set conceallevel=3
 set nu
@@ -26,15 +27,15 @@ set cursorline
 " 设置隐藏而不是 分割窗口
 set hidden
 " 背景透明
-set background=dark
+" set background=dark
 set termguicolors
-hi! Normal guibg=NONE ctermfg=252 ctermbg=NONE
-hi! NonText ctermbg=NONE guibg=NONE
-hi! LineNr ctermbg=NONE guibg=NONE
-hi! VertSplit ctermbg=100 ctermfg=100
+" hi! Normal guibg=NONE ctermfg=252 ctermbg=NONE
+" hi! NonText ctermbg=NONE guibg=NONE
+" hi! LineNr ctermbg=NONE guibg=NONE
+" hi! VertSplit ctermbg=100 ctermfg=100
 " hi! CursorLine   cterm=NONE ctermbg=black ctermfg=green guibg=blue guifg=NONE
 "hi VertSplit    term=reverse        cterm=reverse          gui=none             guibg=Grey10      guifg=blue
-hi VertSplit    gui=none             guibg=Grey10      guifg=blue
+"hi VertSplit    gui=none             guibg=Grey10      guifg=blue
 "相对行
 " set relativenumber
 " }}}
@@ -52,7 +53,7 @@ set smartindent
 set tabstop=4
 set expandtab
 set softtabstop=4
-" set foldmethod=indent
+set foldmethod=indent
 set shiftwidth=4
 " }}}
 
@@ -88,3 +89,5 @@ inoremap <C-d> <Del>
 cd ~
 " }}}
 
+
+let g:python3_host_prog='/usr/local/bin/python3'

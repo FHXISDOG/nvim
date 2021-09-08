@@ -39,6 +39,9 @@ func! CompileRunGcc()
 		:term go run .
 	endif
 endfunc
+func! TestFunc()
+
+endfunc
 " }}}
 " reload vimrc
 "func ReloadConfig()

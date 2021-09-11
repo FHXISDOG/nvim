@@ -27,7 +27,7 @@ set cursorline
 " 设置隐藏而不是 分割窗口
 set hidden
 " 背景透明
-" set background=dark
+set background=dark
 set termguicolors
 " hi! Normal guibg=NONE ctermfg=252 ctermbg=NONE
 " hi! NonText ctermbg=NONE guibg=NONE

@@ -66,7 +66,7 @@ let g:airline_symbols.spell = 'Ꞩ'
 let g:airline_symbols.notexists = 'Ɇ'
 " 开启tabline
 let g:airline#extensions#tabline#enabled = 1      "tabline中当前buffer两端的分隔字符
-let g:airline#extensions#tabline#left_sep = 'โ'   "tabline中未激活buffer两端的分隔字符
+let g:airline#extensions#tabline#left_sep = ' '   "tabline中未激活buffer两端的分隔字符
 let g:airline#extensions#tabline#left_alt_sep = '|'      "tabline中buffer显示编号
 let g:airline#extensions#tabline#buffer_nr_show = 1      
 let g:airline_powerline_fonts = 1
@@ -250,8 +250,8 @@ omap ac <Plug>(coc-classobj-a)
 
 " Use CTRL-S for selections ranges.
 " Requires 'textDocument/selectionRange' support of LS, ex: coc-tsserver
-nmap <silent> <C-s> <Plug>(coc-range-select)
-xmap <silent> <C-s> <Plug>(coc-range-select)
+" nmap <silent> <C-s> <Plug>(coc-range-select)
+" xmap <silent> <C-s> <Plug>(coc-range-select)
 
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocAction('format')
@@ -308,10 +308,10 @@ nmap <space>f :CocCommand explorer --preset floating<CR>
 autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
 let g:coc_explorer_global_presets = {
 \   '.vim': {
-\     'root-uri': '~/.vim',
+\     'root-uri': '~/.config/nvim',
 \   },
 \   'cocConfig': {
-\      'root-uri': '~/.config/coc',
+\      'root-uri': '~/.config/nvim/coc',
 \   },
 \   'tab': {
 \     'position': 'tab',

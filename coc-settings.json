@@ -1,6 +1,25 @@
 {
-  "explorer.width": 30,
+  "explorer.width": 60,
   "explorer.icon.enableNerdfont": true,
+  "explorer.root.customRules": {
+    "vcs": {
+      "patterns": [
+        ".git",
+        ".hg",
+        ".projections.json",
+        ".project"
+      ]
+    },
+    "vcs-r": {
+      "patterns": [
+        ".git",
+        ".hg",
+        ".projections.json",
+        ".project"
+      ],
+      "bottomUp": true
+    }
+  },
   "explorer.previewAction.onHover": false,
   "explorer.keyMappings.global": {
     "<cr>": [
@@ -22,6 +41,7 @@
     "jsonc"
   ],
   "python.pythonPath": "/usr/local/bin/python3",
+  "python.venvPath": "venv",
   "languageserver": {
     "ccls": {
       "command": "ccls",

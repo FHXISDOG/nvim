@@ -18,7 +18,7 @@ endfunction
 let g:coc_node_path = trim(system('which node'))
 " orhter config {{{
 call SourceLocal("custom-config/basic-config.vim")
-call SourceLocal("custom-config/basic-config.vim")
+call SourceLocal("custom-config/custom-config.vim")
 call SourceLocal("custom-config/plug-config.vim")
 "source ~/vimfiles/custom-config/plug-config.vim
 "source ~/vimfiles/custom-config/custom-config.vim

@@ -39,9 +39,6 @@ func! CompileRunGcc()
 		:term go run .
 	endif
 endfunc
-func! TestFunc()
-
-endfunc
 " }}}
 " reload vimrc
 "func ReloadConfig()
@@ -50,4 +47,11 @@ endfunc
 " func bind {{{
 nmap <leader>r :call CompileRunGcc()<CR>
 
+" }}}
+" auto switch input method{{{
+func! SwitchInputMethod()
+    exec "!im-select com.apple.keylayout.ABC"
+endfunc
+
+autocmd InsertLeave *  :call SwitchInputMethod()
 " }}}
